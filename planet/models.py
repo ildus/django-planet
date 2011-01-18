@@ -54,8 +54,8 @@ class Generator(models.Model):
     """
     The software or website that has built a feed
     """
-    name = models.CharField(_("Name"), max_length=100)
-    link = models.URLField(_("Url"), blank=True, null=True)
+    name = models.CharField(_("Name"), max_length=300)
+    link = models.URLField(_("Url"), blank=True, null=True, max_length = 300)
     version = models.CharField(_("Version"), max_length=5, blank=True, null=True)
 
     site_objects = GeneratorManager()
@@ -199,10 +199,10 @@ class Post(models.Model):
     feed = models.ForeignKey("planet.Feed", null=False, blank=False)
     title = models.CharField(_("Title"), max_length=255, db_index=True)
     authors = models.ManyToManyField("planet.Author", through=PostAuthorData)
-    url = models.URLField(_("Url"), db_index=True, max_length = 300)
-    guid = models.CharField(_("Guid"), max_length=300, db_index=True)
+    url = models.URLField(_("Url"), db_index=True, max_length = 301)
+    guid = models.CharField(_("Guid"), max_length=301, db_index=True)
     content = models.TextField(_("Content"))
-    comments_url = models.URLField(_("Comments URL"), blank=True, null=True, max_length = 300)
+    comments_url = models.URLField(_("Comments URL"), blank=True, null=True, max_length = 301)
 
     date_modified = models.DateTimeField(_("Date modified"), null=True,
         blank=True, db_index=True)
