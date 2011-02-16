@@ -3,3 +3,4 @@
 !.gitmodules
 *.pyc
 *~
+migrations
