@@ -84,7 +84,7 @@ def process_feed(feed_url, create=False):
 
         title = document.feed.get("title", "--")
         subtitle = document.feed.get("subtitle")
-        blog_url = document.feed.get("link")
+        blog_url = document.feed.get("link", '')
         rights = document.feed.get("rights") or document.feed.get("license")
         info = document.feed.get("info")
         guid = document.feed.get("id")

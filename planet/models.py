@@ -206,7 +206,7 @@ class Post(models.Model):
 
     date_modified = models.DateTimeField(_("Date modified"), null=True,
         blank=True, db_index=True)
-    date_created = models.DateField(_("Date created"), auto_now_add=True)
+    date_created = models.DateTimeField(_("Date created"), auto_now_add=True)
 
     site_objects = PostManager()
     objects = models.Manager()
