@@ -106,9 +106,9 @@ class Feed(models.Model):
         null=True, db_index=True)
     # modified attribute from Feedparser's Feed object
     last_modified = models.DateTimeField(_("Last modified"), null=True,
-        blank=True, db_index=True)
+        blank=True, db_index=True, default = datetime.now)
     # datetime when the feed was checked by last time
-    last_checked = models.DateTimeField(_("Last checked"), null=True, blank=True)
+    last_checked = models.DateTimeField(_("Last checked"), null=True, blank=True, default = datetime.now)
     # in order to retrieve it or not
     is_active = models.BooleanField(_("Is active"), default=True, db_index=True,
         help_text=_("If disabled, this feed will not be further updated."))
